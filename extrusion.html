@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="This sample shows how to create a choropleth map of extruded polygons using data driven styling." />
     <meta name="keywords" content="Microsoft maps, map, gis, API, SDK, thematic, choropleth, heatmap, heat map, polygon extrusion, extruded polygons" />
-    <meta name="author" content="Microsoft Azure Maps" />
+    <!-- <meta name="author" content="Microsoft Azure Maps" /> -->
 
     <!-- Add references to the Azure Maps Map control JavaScript and CSS files. -->
     <link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css" />
@@ -42,18 +42,14 @@
 
                 //Add authentication details for connecting to Azure Maps.
                 authOptions: {
-                    //Use Azure Active Directory authentication.
+
 
                     authType: 'subscriptionKey',
-                    subscriptionKey: '7K_8RBM1j7MMrXRWOR6bYdEN5oxggTJsuEcVtWTuUS8',
+                    subscriptionKey: 'sU8XQ7MQghFr_g2w-ochh5lBBB89XscUsOgFXZc7ChA',
                     
-                    clientId: "1eaf76ef-9509-4baa-89d7-a16cc00a7560",
+                    clientId: "84bcb078-12b1-49af-ade5-82e32bd63b2d",
 
-                    // authType: 'subscriptionKey',
-                    // subscriptionKey: '7K_8RBM1j7MMrXRWOR6bYdEN5oxggTJsuEcVtWTuUS8',
-                    
-                    // clientId: "1eaf76ef-9509-4baa-89d7-a16cc00a7560",
-
+                    //Use Azure Active Directory authentication.
                     // authType: 'anonymous',
                     // clientId: "04ec075f-3827-4aed-9975-d56301a2d663", //Your Azure Active Directory client id for accessing your Azure Maps account.
                     getToken: function (resolve, reject, map) {
@@ -66,6 +62,7 @@
                     //Alternatively, use an Azure Maps key. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
                     //authType: 'subscriptionKey',
                     //subscriptionKey: '<Your Azure Maps Key>'
+
                 }
             });
 
@@ -79,7 +76,7 @@
                 map.sources.add(datasource);
 
                 //Load a dataset of polygons that have metadata we can style against.
-                datasource.importDataFromUrl('../data/density.json');
+                datasource.importDataFromUrl('../data/newdensity.json');
 
                 //Create a stepped expression based on the color scale.
                 var steppedExp = [
@@ -142,9 +139,9 @@
     </style>
 </head>
 <body onload="GetMap()">
-    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:600px;"></div>
+    <div id="myMap" style="position:relative;width:100%;min-width:290px;height:900px;"></div>
 
-    <div id="legend">COVID-19 CASES BY REGION<br />(people/mi<sup>2</sup>)<br /></div>
+    <div id="legend">Covid-19 Cases in the Last 2 Weeks<br /> (in thousands)<br /></div>
 
 </body>
 </html>
